@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hover-animation {
+  animation: hover 1.75s ease-in-out infinite;
+}
+
+#castle {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#293c4d, #001920);
+  overflow: hidden;
+}
+#castle #table {
+  position: absolute;
+  left: calc(50% - 200px);
+  top: calc(50% - 50px);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(#a3727e, #af7279, #a16674);
+  border-radius: 100%;
+  border-bottom: 80px solid #623c53;
+  transform: scaleY(0.225);
+}
+#castle .shade-wrap {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(52% - 250px);
+  width: 200px;
+  height: 400px;
+}
+#castle .shade-wrap #shade-main {
+  position: absolute;
+  left: 20px;
+  top: 100px;
+  width: 160px;
+  height: 300px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  border-top-left-radius: 50% 30%;
+  border-top-right-radius: 50% 30%;
+  border-bottom: none;
+  transform: perspective(200px) rotateX(8deg) scale(1.075, 1);
+}
+#castle .shade-wrap #shade-main #shade-handle-big {
+  position: absolute;
+  left: 55px;
+  top: -14px;
+  width: 50px;
+  height: 30px;
+  border-radius: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  transform: scaleY(0.9);
+}
+#castle .shade-wrap #shade-main #shade-handle-small {
+  position: absolute;
+  left: 70px;
+  top: -33px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: none;
+}
+#castle .shade-wrap #shade-main #bottom-shade {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 40px;
+  transform: scaleY(0.5);
+  border-radius: 100%;
+  background: radial-gradient(#d287a5, #da9db6, #985e74);
+  animation: floatAnimate 1.75s ease-in-out infinite;
+}
+#castle .shade-wrap #shade-main-reflections {
+  position: relative;
+  left: 20px;
+  top: 100px;
+  width: 160px;
+  height: 300px;
+  border-top-left-radius: 50% 30%;
+  border-top-right-radius: 50% 30%;
+  border-bottom: none;
+  background-color: #6d6179;
+  transform: perspective(200px) rotateX(8deg) scale(1.075, 1);
+  opacity: 0.15;
+}
+#castle .shade-wrap #shade-main-reflections:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 50% 30%;
+  border-right: 20px solid rgba(255, 255, 255, 0.5);
+  transform: scale(0.7, 0.85);
+  filter: blur(5px);
+}
+#castle .shade-wrap #shade-main-reflections:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 50% 30%;
+  border-left: 8px solid rgba(255, 255, 255, 0.6);
+  transform: scale(0.85, 0.85);
+  filter: blur(5px);
+}
+#castle .shade-wrap #flower-wrap {
+  position: relative;
+  top: -50px;
+}
+#castle .shade-wrap #flower-wrap #stem {
+  position: absolute;
+  left: 82px;
+  top: 187px;
+  width: 100px;
+  height: 150px;
+  background-color: transparent;
+  border: solid 4px #a1b965;
+  border-color: transparent transparent transparent #a1b965;
+  border-radius: 50%/120px 100px 0 0;
+  transform: rotate(-3deg) scale(1.1, 0.9);
+}
+#castle .shade-wrap #flower-wrap #petal1 {
+  position: absolute;
+  left: 97px;
+  top: 188px;
+  width: 25px;
+  height: 25px;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+  background-color: #c82b60;
+  box-shadow: 1px -1px 1px 0 #6f1232;
+  transform: rotate(32deg) scale(1.6, 1.6);
+}
+#castle .shade-wrap #flower-wrap #petal1:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+  background-color: transparent;
+  box-shadow: 0 0 10px 0 #e8b2ca;
+  opacity: 0.9;
+}
+#castle .shade-wrap #flower-wrap #petal1:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+  background-color: transparent;
+  box-shadow: 0 0 35px 0 #e8b2ca;
+  animation: glow 3s ease-in-out infinite;
+}
+#castle .shade-wrap #flower-wrap #petal2 {
+  position: absolute;
+  left: 85px;
+  top: 185px;
+  width: 25px;
+  height: 30px;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 10%;
+  background-color: #d05478;
+  transform: rotate(35deg) scale(1.2, 1);
+  box-shadow: 1px -1px 1px 0 #6f1232;
+  opacity: 0.9;
+}
+#castle .shade-wrap #flower-wrap #petal3 {
+  position: absolute;
+  left: 105px;
+  top: 197px;
+  width: 25px;
+  height: 28px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50% 50%;
+  background-color: #cb5275;
+  transform: rotate(25deg) scale(1, 1.05) skew(-8deg);
+  box-shadow: 1px -1px 1px 0 #6f1232;
+  opacity: 0.9;
+}
+#castle .shade-wrap #flower-wrap #petal4 {
+  position: absolute;
+  left: 80px;
+  top: 191px;
+  width: 25px;
+  height: 25px;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 10%;
+  background-color: #d26484;
+  transform: rotate(30deg) scale(1.1, 0.9) skew(10deg);
+  box-shadow: 1px -1px 1px 0 #a53d60;
+  opacity: 0.9;
+}
+#castle .shade-wrap #flower-wrap #petal5 {
+  position: absolute;
+  left: 105px;
+  top: 207px;
+  width: 25px;
+  height: 20px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50% 50%;
+  background-color: #d26484;
+  transform: rotate(28deg) scale(1, 1.05) skew(-18deg);
+  box-shadow: 1px -1px 1px 0 #a53d60;
+  opacity: 0.9;
+}
+#castle .shade-wrap #flower-wrap #falling-petal {
+  position: absolute;
+  left: 105px;
+  top: 209px;
+  width: 22px;
+  height: 18px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 10% 10%;
+  border-bottom-left-radius: 10% 10%;
+  border-bottom-right-radius: 50% 50%;
+  background-color: #da7290;
+  transform: rotate(32deg) scale(0.9, 0.95) skew(-18deg);
+  box-shadow: 1px -1px 1px 0 #a53d60;
+  opacity: 0.9;
+  animation: 7s fall 4s ease-in-out infinite;
+}
+#castle .shade-wrap #flower-wrap #leaf1 {
+  position: absolute;
+  left: 75px;
+  top: 225px;
+  width: 13px;
+  height: 20px;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 10%;
+  background-color: #a1b965;
+  transform: rotate(5deg);
+}
+#castle .shade-wrap #flower-wrap #leaf2 {
+  position: absolute;
+  left: 82px;
+  top: 265px;
+  width: 12px;
+  height: 16px;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 10%;
+  background-color: #a1b965;
+  transform: rotate(-97deg);
+}
+
+.dustDef {
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 0 0 3px 1px white;
+  opacity: 0;
+}
+
+@keyframes hover {
+  0% {
+    margin-top: 60px;
+  }
+  50% {
+    margin-top: 50px;
+  }
+  100% {
+    margin-top: 60px;
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 25px 0 #e8b2ca;
+  }
+  50% {
+    box-shadow: 0 0 45px 0 #e8b2ca;
+  }
+  100% {
+    box-shadow: 0 0 25px 0 #e8b2ca;
+  }
+}
+@keyframes fall {
+  5% {
+    top: 209px;
+    left: 105px;
+    transform: rotate(55deg) scale(0.9, 0.95) skew(-18deg);
+    opacity: 0.9;
+  }
+  30% {
+    left: 90px;
+  }
+  55% {
+    left: 130px;
+  }
+  60%, 100% {
+    top: 380px;
+    transform: rotate(30deg) scale(0.9, 0.95) skew(-32deg);
+    opacity: 0;
+  }
+}
+@keyframes floatAnimate {
+  0% {
+    background-size: 105% 120%;
+    background-position: 0 0;
+    opacity: 0.7;
+  }
+  50% {
+    background-size: 100% 100%;
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  100% {
+    background-size: 105% 120%;
+    background-position: 0 0;
+    opacity: 0.7;
+  }
+}
